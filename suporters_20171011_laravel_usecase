@@ -1,4 +1,51 @@
 # 【サポーターズCoLab勉強会】新規システムのためのLaravel導入とユースケース駆動開発の話
 - [勉強会URL](https://supporterzcolab.com/event/178/)
 
-## 
+## 内容
+- サービス名
+https://lafabric.jp/
+
+- バージョン
+  - php 5.6 7.1
+  - cake 2系
+  - Laravel 5.4
+
+- フレームワーク選定基準
+  - ORM(Eloquent)が直感的かどうか（SQLを連想しやすい。）
+  - Model Directoryがないためファットモデルに対する向き合いになる。
+  - 導入前
+    - サンプルアプリを作り書き味をチェック
+    - 15-repository(https://github.com/andersao/l5-repository)
+
+- architecture
+  - Controller：requestの受付（※ ControllerはModelを動かさない。）
+  - Usecases：Business Logic
+  - Repository：Modelの役割
+  - DB
+
+- ユースケース駆動開発
+  - ユースケースを起点としてシステムの立ち振る舞いや要件を定義して開発を進める手法
+  - 業務フローとかもこれにあたりそう。
+  - 誰が何をどうするを明確に定義する。
+    - 誰が：アクター名
+
+  - Bad usecase：「自動販売機、ドリンクを排出する」->購入時？、賞品入れ替え時？
+
+- 用語
+  - ユースケース図
+  - ロバネスト分析
+  - ランウェイ
+    ランウェイとは、ある企業がキャッシュ不足に陥るまでの残存期間を、月数で表現したもの
+
+- Question
+  - Usecasesの汎用化については？
+    - 汎用化しても将来的に汎用的なメソッドかどうかわからない。Usecaseごとに共通ロジックも存在するのでは。
+    また、汎用的なメソッドを別ディレクトリに切ったりすると誰もいじれない神ディレクトリが生まれてしまう可能性がある。
+    そのため、多少の重複があっても汎用化はしない。
+  - ユースケース定義のインプット、SIerなら顧客との要件定義だが。
+    - ユースケースは初期段階から作り始めても良い。
+  - laravelは速度問題が言われがちだと思うんだが。
+
+- Self reference
+  - http://tech.medpeer.co.jp/entry/2015/07/13/142841
+
